@@ -15,13 +15,14 @@
                 <!--<input id="task_name" name="task_name" type="text">-->
                 <select id="category" name="category_name">
                   <option value="" disabled selected>Choose Category</option>
-                  {% for cat in categories %}
+                  {% for cat in category %}
                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                   {% endfor %}
                 </select>
                 <label for="icon_prefix">Task Name</label>
             </div>
         </div>
+        
         
         
         <div class="row">
@@ -31,6 +32,16 @@
                 <label for="icon_telephone">Task Description</label>
             </div>
         </div>
+        
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">language</i>
+                <textarea name="website" id="Website" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Website</label>
+            </div>
+        </div>
+        
         
         
         <!--put the datepicker initialization in layout.html-->
