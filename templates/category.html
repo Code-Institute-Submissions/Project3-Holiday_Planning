@@ -1,0 +1,46 @@
+{% extends 'layout.html' %} {% block content %}
+
+
+<div class="row">
+  
+    <h3>Category</h3>  
+    <ul class="collapsible data-collapsible=accordion">
+      
+    {% for category in category %}
+    <li>
+      
+        <div class="collapsible-header">
+            <a href="{{url_for('delete_category', task_id=category._id)}}" class="waves-effect waves-light btn btn-small">Delete</a>
+            <a href="{{url_for('edit_category', category_id=category._id)}}" class="waves-effect waves-light btn btn-small">Edit</a>
+        
+            <div class="task_header">
+                <strong>{{category.catgory_name}}</strong>
+            </div> 
+      
+        </div>
+    </li>
+    {% endfor %}  
+    
+  </ul>
+</div>
+
+
+<div class="row">
+    <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn"><i class="material-icons right">playlist_add</i>Add Category</a>
+</div>
+  
+
+
+<!--Add Category Button-->
+<div>
+    <section class="jumbotron text-center">
+        <div class="container">
+          <h5 class="jumbotron-heading" id="font1">Add Category</h5>
+          <p id="font3">
+            <a href='{{ url_for('add_category') }}' class="btn"> Add</a>
+          </p>
+        </div>
+      </section>
+</div>
+        
+{% endblock %}  
