@@ -10,18 +10,20 @@
       <div class="collapsible-header">
           <div class="task_header col s3">
               <i class="material-icons">expand_more</i>
-              <a href="{{url_for('delete_tasks', task_id=task._id)}}" class="waves-effect waves-light btn btn-small">Done</a>
-              <a href="{{url_for('edit_tasks', task_id=task._id)}}" class="waves-effect waves-light btn btn-small">Edit</a>
+              <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn btn-small">Done</a>
+              <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn-small">Edit</a>
+              <!--<strong>{{task.category_name}}</strong>-->
           </div>
         
           <div class="task_header col s9">
-              <strong>{{task.task_name}}</strong> - {{task.due_date}}
+              <strong>{{task.category_name}}</strong>
+              <br><strong>{{task.task_name}}</strong> - {{task.due_date}}
           </div> 
       </div>
         
         
       <div class="collapsible-body">
-        <span>{{task.task_description}}</span><br><span>{{task.website_link}}</span>
+        <span>{{task.task_description}}</span><br><span>{{task.website}}</span><br><span>Person in charge - {{task.person_in_charge}}</span>
       </div>
     
     </li>
