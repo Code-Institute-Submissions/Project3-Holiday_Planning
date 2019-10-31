@@ -1,5 +1,31 @@
 {% extends 'layout.html' %} {% block content %}
 
+
+<div class="allTask">
+  <div class='row'>
+      <div class='col'>
+        <h5>All Task</h5>
+      </div>
+      <div class='col'>
+           <!-- Dropdown Trigger -->
+      <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
+  
+    <!-- Dropdown Structure -->
+    <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="#!">one</a></li>
+      <li><a href="#!">two</a></li>
+      <li class="divider" tabindex="-1"></li>
+      <li><a href="#!">three</a></li>
+      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+    </ul>
+      </div>
+     
+  </div>
+
+    
+
+
 <div class="row">
   
 <!--put the collapsible initialization in layout.html    -->
@@ -16,7 +42,7 @@
           </div>
         
           <div class="task_header col s9">
-              <strong>{{task.category_name}}</strong>
+              <strong>Category : {{task.category_name}}</strong>
               <br><strong>{{task.task_name}}</strong> - {{task.due_date}}
           </div> 
       </div>
@@ -30,19 +56,13 @@
     {% endfor %}  
   </ul>
 </div>
-  
-  
-
-<!--Add Task Button-->
-<div>
-    <section class="jumbotron text-center">
-        <div class="container">
-          <h5 class="jumbotron-heading" id="font1">Add Tasks</h5>
-          <p id="font3">
-            <a href='{{ url_for('add_task') }}' class="btn"> Add</a>
-          </p>
-        </div>
-      </section>
 </div>
-        
-{% endblock %}  
+  
+{% endblock %} 
+
+
+
+
+
+
+

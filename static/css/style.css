@@ -3,9 +3,34 @@
     width: 60px;
     line-height: 24px;
     margin: 5px 5px;
-    padding: 0 0.5em;
+    padding: 0.5em;
 }
+
 
 .task_header {
     margin-top: 5px;
 }
+
+
+.nav-wrapper,
+h5{
+    margin: 0px;
+    padding:0px 0px 0px 50px;
+    color: white;
+    /*height:50px;*/
+    /*background-color: #f7babd;*/
+}
+
+
+
+
+.allTask, 
+.addTask{
+    /*color: white;*/
+    height:50px;
+    background-color: #f5a3a7;
+    vertical-align: baseline;
+    padding-top: 10px;
+}
+
+

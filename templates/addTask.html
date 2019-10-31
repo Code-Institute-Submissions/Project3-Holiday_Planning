@@ -1,7 +1,11 @@
 {% extends 'layout.html' %} {% block content %}
 
 
-<h3>Add Task</h3>
+<div class="addTask">
+    <h5>Add Task</h5>
+</div>
+
+
 <div class="row">
     <form action="{{ url_for('insert_task') }}" method="POST" class="col s12">
         
@@ -28,7 +32,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
                 <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Task Description</label>
+                <label for="task_description">Task Description</label>
             </div>
         </div>
         
@@ -37,7 +41,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">language</i>
                 <textarea name="website" id="Website" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Website</label>
+                <label for="website">Website</label>
             </div>
         </div>
         
@@ -48,7 +52,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">today</i>
                 <input id="due_date" name="due_date" type="text" class="datepicker">
-                <label for="icon_prefix">Due Date</label>
+                <label for="due_date">Due Date</label>
             </div>
         </div>
         

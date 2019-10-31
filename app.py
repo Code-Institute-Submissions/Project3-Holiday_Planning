@@ -19,8 +19,10 @@ def index():
 # T1 - Fetch data in mongodb pass it back to tasks.html
 @app.route('/get_tasks')
 def get_tasks():
+    tasks=mongo.db.tasks.find()
+    print(tasks)
     return render_template("tasks.html", 
-                            tasks=mongo.db.tasks.find())
+                           tasks=tasks)
 
     
 

@@ -27,7 +27,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
                 <input id="task_name" name="task_name" type="text" class="validate" value="{{task.task_name}}">
-                <label for="icon_prefix">Task Name</label>
+                <label for="task_name">Task Name</label>
             </div>
         </div>
         
@@ -36,7 +36,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
                 <textarea name="task_description" id="task_description" class="materialize-textarea">{{task.task_description}}</textarea>
-                <label for="icon_telephone">Task Description</label>
+                <label for="task_description">Task Description</label>
             </div>
         </div>
         
@@ -45,7 +45,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">today</i>
                 <input id="due_date" name="due_date" type="text" class="datepicker">
-                <label for="icon_prefix">Due Date</label>
+                <label for="due_date">Due Date</label>
             </div>
         </div>
         
@@ -74,13 +74,16 @@
         
     </form>
 </div>
+{%endblock%}
 
+{%block extra_js %}
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        due_date = Date.parse('{{task.due_date}}');
-        $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy' }).trigger('change');
+        due_date = new Date('{{task.due_date}}');
+        // $('#due_date').pickadate('picker').set('select', due_date, { format: 'dd/mm/yyyy' }).trigger('change');
+        $("#due_date").datepicker('setDate', due_date);
+        $("#due_date").datepicker("_finishSelection");
     });
 </script>
 
