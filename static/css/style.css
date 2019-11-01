@@ -1,14 +1,56 @@
+/*tasks.html*/
+
+.all_task_navi{
+    margin-bottom: 0px;
+}
+
+
+.allTask, 
+.addTask,
+.category{
+    /*color: white;*/
+    height:50px;
+    background-color: #f5a3a7;
+    vertical-align: baseline;
+    padding-top: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 50px;
+}
+
+
+
+/*category*/
+.ul_style {
+   margin: 0px;
+}
+
+
 .btn_small {
     height: 24px;
     width: 60px;
     line-height: 24px;
-    margin: 5px 5px;
-    padding: 0.5em;
+    margin: 5px 100px;
+    padding: 0px 100px;
 }
 
 
-.task_header {
-    margin-top: 5px;
+/*Add Task Page*/
+.submit_btn{
+    margin-left: 200px;
+}
+
+
+
+
+.divider{
+    width:10px;
+    border:none;
+    
+}
+
+
+.task_name{
+   padding: 50px 0px 0px 0px; 
 }
 
 
@@ -17,20 +59,11 @@ h5{
     margin: 0px;
     padding:0px 0px 0px 50px;
     color: white;
-    /*height:50px;*/
-    /*background-color: #f7babd;*/
 }
 
 
 
 
-.allTask, 
-.addTask{
-    /*color: white;*/
-    height:50px;
-    background-color: #f5a3a7;
-    vertical-align: baseline;
-    padding-top: 10px;
-}
+
 
 
