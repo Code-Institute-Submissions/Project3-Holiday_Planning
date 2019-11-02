@@ -1,27 +1,13 @@
-/*tasks.html*/
-
-.all_task_navi{
-    margin-bottom: 0px;
+.nav-wrapper,
+h5{
+    margin: 0px;
+    padding:0px 50px 0px 60px;
+    color: white;
 }
 
 
-.allTask, 
-.addTask,
-.category{
-    /*color: white;*/
-    height:50px;
-    background-color: #f5a3a7;
-    vertical-align: baseline;
-    padding-top: 10px;
-    margin-bottom: 0px;
-    padding-bottom: 50px;
-}
-
-
-
-/*category*/
-.ul_style {
-   margin: 0px;
+.brand-logo{
+    padding:0px 50px 0px 80px;
 }
 
 
@@ -34,32 +20,72 @@
 }
 
 
-/*Add Task Page*/
-.submit_btn{
-    margin-left: 200px;
-}
-
-
-
-
 .divider{
-    width:10px;
+    width:6px;
     border:none;
-    
 }
 
 
-.task_name{
-   padding: 50px 0px 0px 0px; 
+.to_do_list,
+.add_to_do,
+.edit_to_do,
+.category,
+.add_category,
+.edit_category
+{
+    height:45px;
+    background-color: #f5a3a7;
+    padding-top: 10px;
+    margin-bottom: 30px;
+    padding-bottom: 40px;
 }
 
 
-.nav-wrapper,
-h5{
+/*Task*/
+.content_container{
+    border :none;
+    box-shadow: none;
+}
+
+
+.category_side{
+    width: 40px;
+}
+
+
+
+.left_margin{
+    margin-left: 35px;
+}
+
+
+.button_margin{
+    margin-left: 50px;
+}
+
+
+.width{
+    width: 45px;
+}
+
+
+.ul_style{
+    padding: 0px;
     margin: 0px;
-    padding:0px 0px 0px 50px;
-    color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

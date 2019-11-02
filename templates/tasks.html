@@ -1,48 +1,39 @@
 {% extends 'layout.html' %} {% block content %}
 
 
-<div class="allTask">
-  <div class='row all_task_navi'>
-      <div class='col'>
-        <h5>All Task</h5>
-      </div>
-      <div class='col'>
-           <!-- Dropdown Trigger -->
-      <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Drop Me!</a>
-  
-    <!-- Dropdown Structure -->
-    <ul id='dropdown1' class='dropdown-content'>
-      <li><a href="#!">one</a></li>
-      <li><a href="#!">two</a></li>
-      <li class="divider" tabindex="-1"></li>
-      <li><a href="#!">three</a></li>
-      <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
-      <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
-    </ul>
+<div class="to_do_list">
+  <div class='row'>
+      <div class='col'><h5>To-Do List</h5></div>
+      
+      <div class='col'><a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Show All To-Do</a>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="#!">Flight and Transportation</a></li>
+            <li><a href="#!">Accommodation</a></li>
+            <li><a href="#!">Wine and Dine Places</a></li>
+            <li><a href="#!">Place of Interest</a></li>
+            <li><a href="#!">Others</a></li>
+        </ul>
       </div>
      
   </div>
 
     
-
-
-<div class="row">
-  
-<!--put the collapsible initialization in layout.html    -->
-  <ul class="collapsible">
-    {% for task in tasks %}
-    <li>
+  <div class="row">
+    <ul class="collapsible content_container">
+      {% for task in tasks %}
+      <li>
       
       <div class="collapsible-header">
           <div class="task_header col s3">
               <i class="material-icons">expand_more</i>
-              <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn btn-small">Done</a>
-              <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn btn-small">Edit</a>
+              <a href="{{url_for('edit_task', task_id=task._id)}}" class="waves-effect waves-light btn blue-grey">Edit</a>
+              <a href="{{url_for('delete_task', task_id=task._id)}}" class="waves-effect waves-light btn grey">Delete</a>
           </div>
         
           <div class="task_header col s9">
               <strong>Category : {{task.category_name}}</strong>
-              <br><strong>{{task.task_name}}</strong> - {{task.due_date}}
+              <br><strong>{{task.task_name}} - {{task.due_date}}</strong>
           </div> 
       </div>
         
@@ -51,10 +42,10 @@
         <span>{{task.task_description}}</span><br><span>{{task.website}}</span><br><span>Person in charge - {{task.person_in_charge}}</span>
       </div>
     
-    </li>
-    {% endfor %}  
-  </ul>
-</div>
+      </li>
+      {% endfor %}  
+    </ul>
+  </div>
 </div>
   
 {% endblock %} 

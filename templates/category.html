@@ -1,26 +1,27 @@
 {% extends 'layout.html' %} {% block content %}
 
-<div class="category">
+
+<div class='category'>
     <h5>Category</h5>
 </div>
+     
 
 <div class="row">
   
-    <ul class="collapsible ul_style data-collapsible=accordion">
+    <ul class="collapsible ul_style data-collapsible=accordion content_container">
       
     {% for category in category %}
     <li>
-      
+        
         <div class="collapsible-header">
-            <div class="divider"></div>
-            <a href="{{url_for('delete_category', category_id=category._id)}}" class="waves-effect waves-light btn btn-small">Delete</a>
-            <div class="divider"></div>
-            <a href="{{url_for('edit_category', category_id=category._id)}}" class="waves-effect waves-light btn btn-small blue">Edit</a>
-        
-        
-            <div class="task_header col s10">
+              <div class = "category_side"></div>
+              <a href="{{url_for('edit_category', category_id=category._id)}}" class="waves-effect waves-light btn blue-grey">Edit</a>
+              <div class="divider"></div>
+              <a href="{{url_for('delete_category', category_id=category._id)}}" class="waves-effect waves-light btn grey">Delete</a>
+              
+              <div class="task_header col s9">
                 <strong>{{category.category_name}}</strong>
-            </div> 
+              </div> 
       
         </div>
     </li>
@@ -32,21 +33,10 @@
 
 
 <div class="row">
-    <a href="{{url_for('add_category')}}" class="waves-effect waves-light btn"><i class="material-icons right">playlist_add</i>Add Category</a>
+    <div class='col width'></div>  
+    <div class='col'><a href="{{url_for('add_category')}}" class="waves-effect waves-light btn">Add Category</a></div>
 </div>
+
   
-
-
-<!--Add Category Button-->
-<!--<div>-->
-<!--    <section class="jumbotron text-center">-->
-<!--        <div class="container">-->
-<!--          <h5 class="jumbotron-heading" id="font1">Add Category</h5>-->
-<!--          <p id="font3">-->
-<!--            <a href='{{ url_for('add_category') }}' class="btn"> Add</a>-->
-<!--          </p>-->
-<!--        </div>-->
-<!--      </section>-->
-<!--</div>-->
         
 {% endblock %}  

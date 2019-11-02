@@ -1,21 +1,20 @@
 {% extends 'layout.html' %} {% block content %}
 
 
-<div class="addTask">
-    <h5>Add Task</h5>
+<div class="add_to_do">
+    <h5>Add To-Do</h5>
 </div>
 
 
 <div class="row">
-    <form action="{{ url_for('insert_task') }}" method="POST" class="col s12">
+    <div class='col left_margin'></div>  
+    <div class='col s11'>
+    <form action="{{ url_for('insert_task') }}" method="POST" class="">
         
-        
-        <!--put in select option initialization in layout.html-->
-        <div class="row task_name">
-            <div class="input-field  col s12">
+            
+        <div class="row">    
+        <div class="input-field">
                 <i class="material-icons prefix">poll</i>
-                <!--Replace <input id> with <select>. Keep the 1st option and change the rest option with category from Mongodb-->
-                <!--<input id="task_name" name="task_name" type="text">-->
                 <select id="category" name="category_name">
                   <option value="" disabled selected>Choose Category</option>
                   {% for cat in category %}
@@ -25,7 +24,7 @@
                 <label for="icon_prefix">Task Name</label>
             </div>
         </div>
-        
+    
         
         
         <div class="row">
@@ -37,17 +36,26 @@
         </div>
         
         
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">account_box</i>
+                <textarea name="person_in_charge" id="person_in_charge" class="materialize-textarea"></textarea>
+                <label for="person_in_charge">Person In Charge</label>
+            </div>
+        </div>
+        
+        
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">language</i>
-                <textarea name="website" id="Website" class="materialize-textarea"></textarea>
+                <textarea name="website" id="website" class="materialize-textarea"></textarea>
                 <label for="website">Website</label>
             </div>
         </div>
         
         
         
-        <!--put the datepicker initialization in layout.html-->
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">today</i>
@@ -75,6 +83,7 @@
         </div>
         
     </form>
+    </div>
 </div>
 
 {% endblock %}
