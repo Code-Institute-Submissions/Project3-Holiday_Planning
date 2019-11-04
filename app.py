@@ -6,71 +6,74 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'holiday_planning'
-app.config["MONGO_URI"] = 'mongodb+srv://root:es1234@cluster0-dio8w.mongodb.net/holiday_planning?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
 
 
-# Function to display landing page
+
+# T1 - Fetch data in mongodb pass it back to todos.html
 @app.route('/')
-def index():
-    return render_template("tasks.html", tasks=mongo.db.tasks.find())
+def get_todos():
+    critera= {}
+    category = request.args.get('category')
+    
+    if category and category != 'All Category':
+        critera['category_name'] = category
+    else:
+        category = 'All Category'
+        
+    todos=mongo.db.todos.find(critera)
+    print(todos)
+    return render_template("todos.html", 
+                           todos=todos, category_name=category)
+
     
 
-# T1 - Fetch data in mongodb pass it back to tasks.html
-@app.route('/get_tasks')
-def get_tasks():
-    tasks=mongo.db.tasks.find()
-    print(tasks)
-    return render_template("tasks.html", 
-                           tasks=tasks)
-
-    
-
-# T2 & T3 - After add_task, must follow by insert_task
-@app.route('/add_task')
-def add_task():
-    return render_template('addTask.html', 
+# T2 & T3 - After add_todo, must follow by insert_todo
+@app.route('/add_todo')
+def add_todo():
+    return render_template('addTodo.html', 
                             category=mongo.db.category.find())
     
  
-@app.route('/insert_task', methods=['POST'])
-def insert_task():
-    tasks = mongo.db.tasks
-    tasks.insert_one(request.form.to_dict())
-    return redirect(url_for('get_tasks'))
+@app.route('/insert_todo', methods=['POST'])
+def insert_todo():
+    todos = mongo.db.todos
+    todos.insert_one(request.form.to_dict())
+    return redirect(url_for('get_todos'))
  
     
 
-# T4 & T5 - After edit_task, must follow by update_task
-@app.route('/edit_task/<task_id>')
-def edit_task(task_id):
-    the_task =  mongo.db.tasks.find_one({"_id": ObjectId(task_id)})
+# T4 & T5 - After edit_todo, must follow by update_todo
+@app.route('/edit_todo/<todo_id>')
+def edit_todo(todo_id):
+    the_todo =  mongo.db.todos.find_one({"_id": ObjectId(todo_id)})
     all_category =  mongo.db.category.find()
-    return render_template('editTask.html', task=the_task,
+    return render_template('editTodo.html', todo=the_todo,
                            category=all_category)
 
 
-@app.route('/update_task/<task_id>', methods=["POST"])
-def update_task(task_id):
-    tasks = mongo.db.tasks
-    tasks.update( {'_id': ObjectId(task_id)},
+@app.route('/update_todo/<todo_id>', methods=["POST"])
+def update_todo(todo_id):
+    todos = mongo.db.todos
+    todos.update( {'_id': ObjectId(todo_id)},
     {
         'category_name':request.form.get('category_name'),
-        'task_name':request.form.get('task_name'),
-        'task_description': request.form.get('task_description'),
+        'todo_title':request.form.get('todo_title'),
+        'todo_description': request.form.get('todo_description'),
         'person_in-charge': request.form.get('person_in-charge'),
         'website': request.form.get('website'),
         'due_date': request.form.get('due_date'),
         'is_urgent':request.form.get('is_urgent')
     })
-    return redirect(url_for('get_tasks'))
+    return redirect(url_for('get_todos'))
 
 
-# T6 - Delete task from the get_tasks page
-@app.route('/delete_task/<task_id>')
-def delete_task(task_id):
-    mongo.db.tasks.remove({'_id': ObjectId(task_id)})
-    return redirect(url_for('get_tasks'))
+# T6 - Delete todo from the get_todos page
+@app.route('/delete_todo/<todo_id>')
+def delete_todo(todo_id):
+    mongo.db.todos.remove({'_id': ObjectId(todo_id)})
+    return redirect(url_for('get_todos'))
     
 
 

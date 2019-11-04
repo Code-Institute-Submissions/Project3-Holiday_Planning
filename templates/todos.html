@@ -1,0 +1,59 @@
+{% extends 'layout.html' %} {% block content %}
+
+
+<div class="to_do_list">
+  <div class='row'>
+      <div class='col'><h5>To-do List</h5></div>
+      
+      <div class='col'><a style='min-width:300px' class='dropdown-trigger btn' href='#' data-target='dropdown1'>{{category_name}}</a>
+        <!-- Dropdown Structure -->
+        <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="?category=All Category">All Category</li>
+            <li><a href="?category=Flight and Transportation">Flight and Transportation</a></li>
+            <li><a href="?category=Accommodation">Accommodation</a></li>
+            <li><a href="?category=Wine and Dine Places">Wine and Dine Places</a></li>
+            <li><a href="?category=Place of Interest">Place of Interest</a></li>
+            <li><a href="?category=Others">Others</a></li>
+        </ul>
+      </div>
+     
+  </div>
+
+    
+  <div class="row">
+    <ul class="collapsible content_container">
+      {% for todo in todos %}
+      <li>
+      
+      <div class="collapsible-header">
+          <div class="todo_header col s3">
+              <i class="material-icons">expand_more</i>
+              <a href="{{url_for('edit_todo', todo_id=todo._id)}}" class="waves-effect waves-light btn blue-grey">Edit</a>
+              <a href="{{url_for('delete_todo', todo_id=todo._id)}}" class="waves-effect waves-light btn grey">Delete</a>
+          </div>
+        
+          <div class="todo_header col s9">
+              <strong>Category : {{todo.category_name}}</strong>
+              <br><strong>{{todo.todo_title}} - {{todo.due_date}}</strong>
+          </div> 
+      </div>
+        
+        
+      <div class="collapsible-body">
+        <span>{{todo.todo_description}}</span><br><span>{{todo.website}}</span><br><span>Person in charge - {{todo.person_in_charge}}</span>
+      </div>
+    
+      </li>
+      {% endfor %}  
+    </ul>
+  </div>
+</div>
+  
+{% endblock %} 
+
+
+
+
+
+
+

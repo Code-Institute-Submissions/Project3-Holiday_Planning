@@ -12,20 +12,20 @@
     <header>
         <nav>
             <div class="nav-wrapper">
-                <a href="{{url_for('get_tasks')}}" class="brand-logo">Holiday Planning</a>
+                <a href="{{url_for('get_todos')}}" class="brand-logo">Holiday Planning</a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{{url_for('get_tasks')}}">Home</a></li>
-                    <li><a href="{{url_for('add_task')}}">Add To-do</a></li>
+                    <li><a href="{{url_for('get_todos')}}">Home</a></li>
+                    <li><a href="{{url_for('add_todo')}}">Add To-do</a></li>
                     <li><a href="{{url_for('get_category')}}">Manage Category</a></li>
                 </ul>
                 </div>
                 </nav>
                 <!--extended hamburger navbar added for mobile-->
                 <ul class="sidenav" id="mobile-demo">
-                    <li><a href="{{url_for('get_tasks')}}">Home</a></li>
-                    <li><a href="{{url_for('add_task')}}">Add To-do</a></li>
+                    <li><a href="{{url_for('get_todos')}}">Home</a></li>
+                    <li><a href="{{url_for('add_todo')}}">Add To-do</a></li>
                     <li><a href="{{url_for('get_category')}}">Manage Category</a></li>
                 </ul>
             
@@ -55,16 +55,7 @@
             
         });
         
-        // $('.datepicker').pickadate({
-        //     selectMonths: true, // Creates a dropdown to control month
-        //     selectYears: 15, // Creates a dropdown of 15 years to control year,
-        //     today: 'Today',
-        //     clear: 'Clear',
-        //     close: 'Ok',
-        //     closeOnSelect: false // Close upon selecting a date,
-        // });
-        
-        </script>  
+    </script>  
         
         
         {%block extra_js%}{%endblock%}

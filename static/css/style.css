@@ -83,7 +83,13 @@ h5{
 
 
 
-
+.dropdown-trigger,
+.edit_btn,
+.submit_btn,
+.add_category_btn,
+.edit_category_btn{
+    font-weight: 600;
+}
 
 
 

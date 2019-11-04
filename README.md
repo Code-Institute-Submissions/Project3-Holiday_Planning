@@ -1,51 +1,29 @@
 LIVE DEMO LINK
 ==============
-https://eileensiah.github.io/Project-2---India-Startup-Funding/
+
 
 
 BACKGROUND:
 ==========
-* This data set was taken from https://www.kaggle.com.  It provides funding information on the India startups from Janaury 2016 to August 2017.
+* Holidays are meant to be relax and enjoyable.  Preparing a holiday checklist listing down all the necessay to-do items prior to departure is a good way to ensure everything go smoothly during holiday.
 
-* Breakdown of funding
-  * 1429 startups received funding of USD 9.65 billion, of which 98.28% is from Private Equity and 1.72% is from Seed Funding. 
-  * Seed funding of USD165 million was invested in 801 new startups, average USD 205,000 per startup. Seed funding is the 1st round of funding received by startups. 
-  * Equity Funding of USD 9.5 billion was invested in 632 existing startups, average USD 15 million per startup. Equity funding is the subsequent post seed funding.
+* The reason i design this checklist is due to an unpleasant experience my family encountered during our long holdidays in Japan Hokkaido. This was a self drive holiday, but we have overlooked and forgotten to convert our driving licence to international driving licenese. Thus, we were unable to drive in Japan. 
 
-* Top 3 state and sector
-  * Bangalore, Mumbai and New Delhi have the most startups. 
-  * Consumer Internet, eCommerce and Technology are sectors that favoured by investors.
-
-
-* Startup that received the most funding
-     1) Flipkart  - An eCommerce shopping platform founded in year 2007.
-     2) Paytm - A digital payment and eCommerce platform founded in year 2010.
-     3) Ola Cabs - A transportation platform founded in year 2010 (similar to Uber).
-     4) Oyo Rooms - A Hotel Chain founded in year 2013.  It is the world third latest Hotel Chain.
-     5) Snapdeal - An eCommerce shopping platform founded in year 2007.
 
 
 UX DESIGN:
 ==========
-* The data was presented in charts and graphs using D3, DC and Crossfilter for user to have a quick understanding of the India startup landscape. 
-
-* The 1st row give a quick breakdown on total number of startup based on state as well as the size and type of funding. 
-
-* On 2nd row, 3 different charts are shown side by side for user to have a quick understanding on which state; industy as well as startup that received the most funding.
-
-* The charts and graphs on the dashboard are easy to navigate.  For example, when user click on Bangalore under that chart "India State With The Most Startup", other charts and graphs, with information related to Bangalore state will change according.
-
-* On the right side of the heading, a "report" onclick button is provided for user who prefer to view a written summary on this report. 
+* The design of this checklist is similar to a form where user can fill in the relevant informations.  Under navi tab, it has "Home", "Add To-do" and "Manage Category". User has the option to view all the to-do items; to add new to-do as well as add and edit category.
+* A drop down box in the Home page is also provide for user to sort to-do items by category. 
+* In "Home" page, "Edit" and "Delete" button next to the to-do items are provided for user to select. When user choose "edit" button, it will show the to-do edit page. After making changes, user need to click on the "Edit To-do' button at the end of the page" to update the changes. Alternatively, user can select "Delete" button to delete the to-do items.
+* In "Add To-do" page, user can add new to-do item. As usual, user need to click "submit" button at the end of the page to update the checkup. The new add-on item will then appear on the "Home" page.
+* In "Manage Category" page, it showed all the category with "Edit" and "Delete" button next to it.  A "Add Category" button is also provided at the end of the page.
 
 
 
 USER STORIES:
 ============
-The dashboard is an efficent and effective way for user to understand the India Startup Funding landscape.  Complicated data on thousands of startup, can be understood in a couple of minutes. The charts/ graphs provide details for the following questions
-* How does the funding ecosystem change with time?
-* Which state has the most startup as well as received the most funding?
-* Which industries are favored by investors for funding?
-* What type of funding is availbale to startups. How much fund does startups gnerally get in India?
+* As a user, this holiday checklist with 
 
 
 
