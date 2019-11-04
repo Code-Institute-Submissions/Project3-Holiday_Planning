@@ -1,14 +1,21 @@
-.nav-wrapper,
+.nav-wrapper{
+    padding-left: 65px;
+    color: white;
+    font-weight: 500;
+}
+
+
 h5{
     margin: 0px;
     padding:0px 50px 0px 60px;
     color: white;
+    font-weight: 600;
 }
 
 
-.brand-logo{
-    padding:0px 50px 0px 80px;
-}
+/*.brand-logo{*/
+/*    padding:100px 50px 10px 80px;*/
+/*}*/
 
 
 .btn_small {
@@ -34,10 +41,10 @@ h5{
 .edit_category
 {
     height:45px;
-    background-color: #f5a3a7;
+    background-color: #f7babd;
     padding-top: 10px;
     margin-bottom: 30px;
-    padding-bottom: 40px;
+    padding-bottom: 50px;
 }
 
 

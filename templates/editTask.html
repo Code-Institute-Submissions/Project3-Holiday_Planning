@@ -2,7 +2,7 @@
 
 
 <div class="edit_to_do">
-    <h5>Edit To-Do</h5>
+    <h5>Edit To-do</h5>
 </div>
  
 
@@ -24,7 +24,7 @@
                         {% endif %}
                   {% endfor %}
                 </select>
-                <label>Task Category</label>
+                <label>To-do Category</label>
             </div>
         </div>
         
@@ -33,7 +33,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">assignment</i>
                 <input id="task_name" name="task_name" type="text" class="validate" value="{{task.task_name}}">
-                <label for="task_name">Task Name</label>
+                <label for="task_name">To-do Item</label>
             </div>
         </div>
         
@@ -42,7 +42,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
                 <textarea name="task_description" id="task_description" class="materialize-textarea">{{task.task_description}}</textarea>
-                <label for="task_description">Task Description</label>
+                <label for="task_description">To-do Description</label>
             </div>
         </div>
         

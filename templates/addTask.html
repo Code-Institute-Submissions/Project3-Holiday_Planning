@@ -2,7 +2,7 @@
 
 
 <div class="add_to_do">
-    <h5>Add To-Do</h5>
+    <h5>Add To-do</h5>
 </div>
 
 
@@ -21,17 +21,26 @@
                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
                   {% endfor %}
                 </select>
-                <label for="icon_prefix">Task Name</label>
+                <label for="icon_prefix">To-do Category</label>
             </div>
         </div>
     
+        
+         <div class="row">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">assignment</i>
+                <textarea name="task_name" id="task_name" class="materialize-textarea"></textarea>
+                <label for="task_name">To-do Item</label>
+            </div>
+        </div>
+        
         
         
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">subject</i>
                 <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
-                <label for="task_description">Task Description</label>
+                <label for="task_description">To-do Description</label>
             </div>
         </div>
         
